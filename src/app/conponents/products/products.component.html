@@ -1,11 +1,13 @@
 <h2 class="mt-5">Thông tin sản phẩm</h2>
-<table class="table table-bordered">
+<table class="table table-bordered table-responsive">
     <thead>
         <tr>
             <th>name</th>
             <th>price</th>
             <th>description</th>
+            <th>image</th>
             <th>Thao tác</th>
+
         </tr>
     </thead>
     <tbody>
@@ -14,8 +16,9 @@
             <td> {{item.name}}</td>
             <td>{{item.price}}</td>
             <td> {{item.description}}</td>
+            <td><img width="100px" src="{{item.image}}" alt=""></td>
             <td>
-                <button class="btn btn-primary">Xóa</button>
+                <button class="btn btn-primary" (click)="deleteProducts(item.id )">Xóa</button>
             </td>
         </tr>
     </tbody>
