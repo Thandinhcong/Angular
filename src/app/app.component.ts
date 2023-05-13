@@ -7,11 +7,4 @@ import { IUser } from 'src/common/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  User: IUser = {
-    name: "Đinh Công Thản",
-    maSV: "PH26474",
-    age: 25,
-    gender: "Nam",
-  }
-
 }
