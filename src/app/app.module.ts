@@ -8,10 +8,13 @@ import { HeaderComponent } from './conponents/header/header.component';
 import { FooterComponent } from './conponents/footer/footer.component';
 import { ProductsComponent } from './conponents/products/products.component';
 import { CatagorysComponent } from './pages/catagorys/catagorys.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SigninComponent } from './pages/signin/signin.component';
-import { SignupComponent } from './pages/signup/signup.component';
-
-
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
+;
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +24,17 @@ import { SignupComponent } from './pages/signup/signup.component';
     ProductsComponent,
     CatagorysComponent,
     SigninComponent,
-    SignupComponent,
+    ProfileEditorComponent,
+    NotFoundComponent,
+    BaseAdminComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

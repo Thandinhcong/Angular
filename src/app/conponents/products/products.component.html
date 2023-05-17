@@ -13,8 +13,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of listProduct">
-            <td>{{item.id}}</td>
+        <tr *ngFor="let item of listProduct;index as i">
+            <td>{{i+1}}</td>
             <td> {{item.name}}</td>
             <td>{{item.price}}</td>
             <td> {{item.description}}</td>
@@ -34,7 +34,7 @@
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">giá tiền :{{product.price}}</p>
             <p class="card-text">mô tả :{{product.description}}</p>
-            <a href="#" class="btn btn-primary">Go cart</a>
+            <a routerLink="{deiltail/${id}}" class="btn btn-primary">Go cart</a>
         </div>
     </div>
 
