@@ -10,6 +10,8 @@ export class SigninComponent {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  // console.log("profiles :", profileSubmit)
-
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.log(this.profileSubmit.value);
+  }
 }
