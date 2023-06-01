@@ -6,11 +6,13 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
 import { HeaderComponent } from './conponents/header/header.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category', component: CatagorysComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
   {
     path: "admin", component: BaseAdminComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },

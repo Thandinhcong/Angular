@@ -1,5 +1,5 @@
 <h2 class="mt-5">Thông tin sản phẩm</h2>
-<table class="table table-bordered table-striped ">
+<table class=" table table-bordered table-striped table-responsive-xxl">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -7,35 +7,23 @@
             <th scope="col">price</th>
             <th scope="col">description</th>
             <th scope="col">image</th>
-            <th scope="col">Số lượng</th>
             <th scope="col">Thao tác</th>
 
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of listProduct;index as i">
+        <tr *ngFor="let item of productss
+        ;index as i">
             <td>{{i+1}}</td>
             <td> {{item.name}}</td>
             <td>{{item.price}}</td>
             <td> {{item.description}}</td>
-            <td><img width="100px" src="{{item.image}}" alt=""></td>
-            <td>{{item.quantity}}</td>
+            <td><img width=" 100px" src="{{item.image}}" alt="">
+            </td>
             <td>
-                <button class="btn btn-primary" (click)="deleteProducts(item.id )">Xóa</button>
-                <a href="" class="btn btn-primary ms-1">update</a>
+                <button class="btn btn-primary" (click)="deleteProducts(item._id)">Xóa</button>
+                <a [href]="" class="btn btn-primary ms-1">update</a>
             </td>
         </tr>
     </tbody>
 </table>
-<div class="product row row-cols-4 text-center">
-    <div class="card mt-5 col m-2  " style="width: 18rem;" *ngFor="let product of listProduct">
-        <img src="{{product.image}}" class="card-img mt-2" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">giá tiền :{{product.price}}</p>
-            <p class="card-text">mô tả :{{product.description}}</p>
-            <a routerLink="{deiltail/${id}}" class="btn btn-primary">Go cart</a>
-        </div>
-    </div>
-
-</div>

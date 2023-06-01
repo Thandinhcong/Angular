@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 ;
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
     ProfileEditorComponent,
     NotFoundComponent,
     BaseAdminComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
 
   providers: [],

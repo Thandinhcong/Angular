@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 14",
+      "price": 200000,
+      "description": "San pham  nay kha tot",
+      "image": "https://hc.com.vn/i/ecommerce/media/GS.009871_FEATURE_122344.jpg",
+      "quantity": 50
+    },
+    {
+      "id": 2,
+      "name": "iPhone 14 servie",
+      "price": 200000,
+      "description": "San pham  nay kha tot",
+      "image": "https://hc.com.vn/i/ecommerce/media/GS.009871_FEATURE_122344.jpg",
+      "quantity": 50
+    },
+    {
+      "id": 3,
+      "name": "iPhone 14 pro",
+      "price": 200000,
+      "description": "San pham  nay kha tot",
+      "image": "https://hc.com.vn/i/ecommerce/media/GS.009871_FEATURE_122344.jpg",
+      "quantity": 50
+    }
+  ],
+  "users": []
+}
