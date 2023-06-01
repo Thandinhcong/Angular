@@ -4,45 +4,34 @@
         <label for="exampleInputName" class="form-label">User Name</label>
         <input type="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
             formControlName="name">
-        <div *ngIf="
-              formSignup.get('name')?.hasError('required') &&
-              (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)
-            " class="text-danger">
+        <div class="text-danger" *ngIf="formSignup.get('name')?.hasError('required') && submitted">
             Name is Required
         </div>
     </section>
-    <div class=" mb-3">
+    <section class=" mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             formControlName="email">
-        <div *ngIf="
-              formSignup.get('email')?.hasError('required') &&
-              (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
-            " class="text-danger">
-            email is Required
+        <div class="text-danger" *ngIf="formSignup.get('email')?.hasError('required') && submitted">
+            Email is Required
         </div>
-    </div>
-    <div class="mb-3">
+    </section>
+    <section class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
-        <div *ngIf="
-          formSignup.get('password')?.hasError('required') &&
-          (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)
-        " class="text-danger">
-            Nhập mật khẩu
+        <div class="text-danger" *ngIf="formSignup.get('password')?.hasError('minlength') && submitted">
+            Password is Required
         </div>
-    </div>
-    <div class="mb-3">
+    </section>
+    <section class="mb-3">
         <label for="exampleInputPassword1" class="form-label">ResPassword</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
         <div *ngIf="
-          formSignup.hasError('misMatch') &&
-          (formSignup.get('confirmPassWord')?.touched ||
-            formSignup.get('confirmPassWord')?.dirty)
+        formSignup.hasError('notMatch') && submitted
         " class="text-danger">
             Password không trùng nhau
         </div>
-    </div>
+    </section>
     <p>Bạn đã có tài khoản?<a routerLink="../signin">Đăng nhập</a></p>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

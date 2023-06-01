@@ -5,9 +5,11 @@ import { Observable } from "rxjs"
   providedIn: 'root'
 })
 export class AuthService {
-  API_URL: string = "http://localhost:3000/users"
+  API_URL: string = "http://localhost:3000/users";
+
   constructor(private http: HttpClient) { }
+
   signup(users: any): Observable<any> {
-    return this.http.post(`${this.API_URL}/signin`, users)
+    return this.http.post(`${this.API_URL}/signup`, users)
   }
 }
