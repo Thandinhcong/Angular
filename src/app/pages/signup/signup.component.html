@@ -18,18 +18,18 @@
     </section>
     <section class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
         <div class="text-danger" *ngIf="formSignup.get('password')?.hasError('minlength') && submitted">
-            Password is Required
+            Password tối thiểu 6 kí tự
         </div>
     </section>
     <section class="mb-3">
         <label for="exampleInputPassword1" class="form-label">ResPassword</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" formControlName="confirmPassWord" class="form-control" id="exampleInputPassword1">
         <div *ngIf="
         formSignup.hasError('notMatch') && submitted
         " class="text-danger">
-            Password không trùng nhau
+            Password không trùng khớp
         </div>
     </section>
     <p>Bạn đã có tài khoản?<a routerLink="../signin">Đăng nhập</a></p>

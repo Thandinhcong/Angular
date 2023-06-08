@@ -8,3 +8,10 @@ export interface Signin {
     email: string,
     password: string | number,
 }
+export interface Signup {
+    id: number,
+    name: string,
+    email: string,
+    password: string,
+    confirmPassWord: string,
+}

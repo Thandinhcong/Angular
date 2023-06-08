@@ -25,5 +25,34 @@
       "quantity": 50
     }
   ],
-  "users": []
+  "users": [
+    {
+      "name": "hello maris",
+      "email": "thandinh@gmail.com",
+      "password": "123456",
+      "confirmPassWord": "123456",
+      "id": 1
+    },
+    {
+      "name": "Than dinh",
+      "email": "thandinh@gmail.com",
+      "password": "123456",
+      "confirmPassWord": "123456",
+      "id": 2
+    },
+    {
+      "name": "Than dinh",
+      "email": "thandinh@gmail.comm",
+      "password": "123456",
+      "confirmPassWord": "123456",
+      "id": 3
+    },
+    {
+      "name": "Than dinh",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "confirmPassWord": "123456",
+      "id": 4
+    }
+  ]
 }
