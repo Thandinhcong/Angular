@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/common/products';
@@ -10,6 +10,7 @@ import { IProduct } from 'src/common/products';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
+  submitted: boolean = false;
   product!: IProduct;
   constructor(
     private productService: ProductService,
@@ -17,12 +18,13 @@ export class AddProductComponent {
     private router: Router
   ) { }
   AddForm = this.formBuilder.group({
-    name: [''],
-    price: [0],
-    description: [''],
-    image: ['']
+    name: ['', [Validators.required]],
+    price: [, [Validators.required, Validators.minLength(5)]],
+    description: ['', [Validators.minLength(225)]],
+    image: ['', [Validators.required]]
   })
   onHandleSubmit() {
+    this.submitted = true;
     if (this.AddForm.valid) {
       const products: IProduct = {
         name: this.AddForm.controls['name'].value || '',
@@ -33,7 +35,6 @@ export class AddProductComponent {
       this.productService.addProduct(products).subscribe(data => {
         alert("thêm thành công");
         this.router.navigate(['/'])
-
       })
     }
   }

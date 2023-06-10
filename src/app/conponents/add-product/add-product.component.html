@@ -1,11 +1,32 @@
 <form (ngSubmit)="onHandleSubmit()" [formGroup]="AddForm">
-    <label for="">Name</label>
-    <input type="text" class="form-control" formControlName="name">
-    <label for="">price</label>
-    <input type="number" class="form-control" formControlName="price">
-    <label for="">description</label>
-    <input type="text" class="form-control" formControlName="description">
-    <label for="">image</label>
-    <input type="file" class="form-control" formControlName="image">
+    <div>
+        <label for="">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div class="text-danger" *ngIf="AddForm.get('name')?.hasError('required') && submitted">
+            Name is Required
+        </div>
+    </div>
+    <div>
+        <label for="">price</label>
+        <input type="number" class="form-control" formControlName="price">
+        <div class="text-danger" *ngIf="AddForm.get('price')?.hasError('required') && submitted">
+            price is Required
+        </div>
+    </div>
+    <div>
+
+        <label for="">description</label>
+        <input type="text" class="form-control" formControlName="description">
+        <div class="text-danger" *ngIf="AddForm.get('description')?.hasError('minlength') && submitted">
+            Mô tả tối thiểu 225 kí tự
+        </div>
+    </div>
+    <div>
+        <label for="">image</label>
+        <input type="file" class="form-control" formControlName="image">
+        <div class="text-danger" *ngIf="AddForm.get('image')?.hasError('required') && submitted">
+            Vui lòng chọn ảnh
+        </div>
+    </div>
     <button class="btn btn-primary">Thêm</button>
 </form>

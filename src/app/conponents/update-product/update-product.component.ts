@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/common/products';
@@ -10,12 +10,13 @@ import { IProduct } from 'src/common/products';
   styleUrls: ['./update-product.component.css']
 })
 export class UpdateProductComponent {
+  submitted: boolean = false;
   products!: IProduct;
   UpdateForm = this.formBuilder.group({
-    name: [''],
-    price: [0],
-    description: [''],
-    image: ['']
+    name: ['', Validators.required],
+    price: [0, Validators.required, Validators.minLength(5)],
+    description: ['', Validators.min(225)],
+    image: ['', Validators.required]
   })
   constructor(
     private productService: ProductService,
