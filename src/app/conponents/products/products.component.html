@@ -1,4 +1,5 @@
 <h2 class="mt-5">Thông tin sản phẩm</h2>
+<a href="/add-product" class="btn btn-primary">Thêm sản phẩm</a>
 <table class=" table table-bordered table-striped table-responsive-xxl">
     <thead>
         <tr>
@@ -12,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of productss
+        <tr *ngFor="let item of products
         ;index as i">
             <td>{{i+1}}</td>
             <td> {{item.name}}</td>
@@ -21,7 +22,7 @@
             <td><img width=" 100px" src="{{item.image}}" alt="">
             </td>
             <td>
-                <button class="btn btn-primary" (click)="deleteProducts(item._id)">Xóa</button>
+                <button class="btn btn-primary" (click)="deleteProducts(item.id)">Xóa</button>
                 <a [href]="" class="btn btn-primary ms-1">update</a>
             </td>
         </tr>

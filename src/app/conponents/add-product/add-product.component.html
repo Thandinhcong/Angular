@@ -1,0 +1,11 @@
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="AddForm">
+    <label for="">Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <label for="">price</label>
+    <input type="number" class="form-control" formControlName="price">
+    <label for="">description</label>
+    <input type="text" class="form-control" formControlName="description">
+    <label for="">image</label>
+    <input type="file" class="form-control" formControlName="image">
+    <button class="btn btn-primary">Thêm</button>
+</form>

@@ -7,12 +7,16 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
 import { HeaderComponent } from './conponents/header/header.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AddProductComponent } from './conponents/add-product/add-product.component';
+import { UpdateProductComponent } from './conponents/update-product/update-product.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category', component: CatagorysComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'update-product', component: UpdateProductComponent },
   {
     path: "admin", component: BaseAdminComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },

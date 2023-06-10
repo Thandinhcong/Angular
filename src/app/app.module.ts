@@ -17,6 +17,8 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BaseAdminComponent } from './admin/base-admin/base-admin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AddProductComponent } from './conponents/add-product/add-product.component';
+import { UpdateProductComponent } from './conponents/update-product/update-product.component';
 ;
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     NotFoundComponent,
     BaseAdminComponent,
     SignupComponent,
+    AddProductComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,
