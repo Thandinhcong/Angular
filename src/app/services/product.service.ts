@@ -9,18 +9,18 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
   getProduct(): Observable<any> {
-    return this.http.get<IProduct[]>('http://localhost:8080/api/products/')
+    return this.http.get<IProduct[]>('http://localhost:3000/products/')
   }
-  // getOneProduct(id: any): Observable<IProducts[]> {
-  //   return this.http.get<IProducts[]>('http://localhost:3000/products/' + id)
-  // }
-  // addProduct(products: IProducts): Observable<IProducts[]> {
-  //   return this.http.post<IProducts[]>('http://localhost:3000/products/', products)
-  // }
+  getOneProduct(id: any): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>('http://localhost:3000/products/' + id)
+  }
+  addProduct(products: IProduct): Observable<IProduct[]> {
+    return this.http.post<IProduct[]>('http://localhost:3000/products/', products)
+  }
   deleteProduct(id: any): Observable<IProduct> {
-    return this.http.delete<IProduct>(`http://localhost:8080/api/products/` + id);
+    return this.http.delete<IProduct>(`http://localhost:3000/products/` + id);
   }
-  // updateProduct(products: IProducts): Observable<IProducts[]> {
-  //   return this.http.put<IProducts[]>(`http://localhost:3000/products/${products.id}`, products)
-  // }
+  updateProduct(products: IProduct): Observable<IProduct[]> {
+    return this.http.put<IProduct[]>(`http://localhost:3000/products/${products.id}`, products)
+  }
 }

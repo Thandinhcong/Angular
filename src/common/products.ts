@@ -17,5 +17,5 @@ export interface IProduct {
     price: number;
     salient_features: string;
     updatedAt: string;
-    _id: string;
+    id: string | number;
 }

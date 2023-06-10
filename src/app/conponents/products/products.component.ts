@@ -9,18 +9,13 @@ import { IProduct } from 'src/common/products';
 })
 export class ProductsComponent {
   status: boolean = false;
-
   productName = "";
-
   product!: IProduct;
-
-  productss: IProduct[] = [];
-
+  products: IProduct[] = [];
   constructor(private productService: ProductService) {
     this.productService.getProduct().subscribe((data) => {
       console.log({ data });
-
-      this.productss = data.products
+      this.products = data
     }, error =>
       console.log({ error })
     )
@@ -38,7 +33,7 @@ export class ProductsComponent {
     const confilm = window.confirm("bạn có muốn xóa không ?");
     if (confilm) {
       this.productService.deleteProduct(id).subscribe(() => {
-        this.productss.filter((product) => product._id !== id)
+        this.products.filter((product) => product.id !== id)
         alert("xóa thành công sản phẩm")
       })
     }
