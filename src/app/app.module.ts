@@ -9,7 +9,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './conponents/header/header.component';
 import { FooterComponent } from './conponents/footer/footer.component';
 import { ProductsComponent } from './conponents/products/products.component';
-import { CatagorysComponent } from './pages/catagorys/catagorys.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -27,7 +26,6 @@ import { UpdateProductComponent } from './conponents/update-product/update-produ
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    CatagorysComponent,
     SigninComponent,
     ProfileEditorComponent,
     NotFoundComponent,

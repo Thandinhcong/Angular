@@ -1,5 +1,5 @@
 <h2 class="mt-5">Thông tin sản phẩm</h2>
-<a href="/add-product" class="btn btn-primary">Thêm sản phẩm</a>
+<a routerLink="/add-product" class="btn btn-primary">Thêm sản phẩm</a>
 <table class=" table table-bordered table-striped table-responsive-xxl">
     <thead>
         <tr>
@@ -23,7 +23,7 @@
             </td>
             <td>
                 <button class="btn btn-primary" (click)="deleteProducts(item.id)">Xóa</button>
-                <a [href]="" class="btn btn-primary ms-1">update</a>
+                <a [routerLink]="['/update-product/',item.id]" class="btn btn-primary ms-1">update</a>
             </td>
         </tr>
     </tbody>
