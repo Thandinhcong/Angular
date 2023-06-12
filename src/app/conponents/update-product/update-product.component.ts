@@ -13,10 +13,10 @@ export class UpdateProductComponent {
   submitted: boolean = false;
   products!: IProduct;
   UpdateForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    price: [0, Validators.required, Validators.minLength(5)],
-    description: ['', Validators.min(225)],
-    image: ['', Validators.required]
+    name: ['', [Validators.required]],
+    price: [0, [Validators.required, Validators.minLength(5)]],
+    description: ['', [Validators.min(225)]],
+    image: ['', [Validators.required]]
   })
   constructor(
     private productService: ProductService,
@@ -42,12 +42,13 @@ export class UpdateProductComponent {
   onHandleSubmit() {
     if (this.UpdateForm.valid && this.products) {
       const products: IProduct = {
+        ...this.products,
         name: this.UpdateForm.controls['name'].value || '',
         price: this.UpdateForm.controls['price'].value || 0,
         description: this.UpdateForm.controls['description'].value || '',
         image: this.UpdateForm.controls['image'].value || '',
       }
-      this.productService.addProduct(products).subscribe(data => {
+      this.productService.updateProduct(products).subscribe(data => {
         alert("Cập nhật thành công");
         this.router.navigate(['/'])
 
